@@ -1,0 +1,151 @@
+<html>
+
+<head>
+  <title>Happy Birthday</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<style>
+  button {
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+
+  button {
+    --primary-color: #111;
+    --hovered-color: #c84747;
+    position: relative;
+    display: flex;
+    font-weight: 600;
+    font-size: 20px;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  button p {
+    margin: 0;
+    position: relative;
+    font-size: 20px;
+    color: var(--primary-color);
+  }
+
+  button::after {
+    position: absolute;
+    content: "";
+    width: 0;
+    left: 0;
+    bottom: -7px;
+    background: var(--hovered-color);
+    height: 2px;
+    transition: 0.3s ease-out;
+  }
+
+  button p::before {
+    position: absolute;
+    /*   box-sizing: border-box; */
+    content: "Click for Next";
+    width: 0%;
+    inset: 0;
+    color: var(--hovered-color);
+    overflow: hidden;
+    transition: 0.3s ease-out;
+  }
+
+  button:hover::after {
+    width: 100%;
+  }
+
+  button:hover p::before {
+    width: 100%;
+  }
+
+  button:hover svg {
+    transform: translateX(4px);
+    color: var(--hovered-color);
+  }
+
+  button svg {
+    color: var(--primary-color);
+    transition: 0.2s;
+    position: relative;
+    width: 15px;
+    transition-delay: 0.2s;
+  }
+</style>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="loader">
+        <button id="play">Start</button>
+      </div>
+    </div>
+  </div>
+  <audio class="song" controls loop>
+    <source src="music.mp3">
+    </source>
+    Your browser isn't invited for super fun audio time.
+  </audio>
+  <canvas id="confetti"></canvas>
+  <div class="main">
+    <div class="container pt-5">
+      <div class="row">
+
+        <div class="col-12 col-xl-6 mx-auto">
+          <img src="img/banner.png" alt="">
+        </div>
+
+        <div class="col-12  text-center">
+          <div id="name" class="area">Dolly</div>
+        </div>
+
+        <div class="col-12 text-center">
+          <div class="type-wrap">
+            <div id="typed-strings" class="typing">
+              <h2>Happy Birthday <i id="nae">Dolly</i></h2>
+              <h2>Have a wonderful day</h2>
+              <h2>Filled with joy and happiness.</h2>
+            </div>
+            <span id="typed" style="white-space:pre;"></span>
+          </div>
+        </div>
+
+        <div class="col-12 col-xl-3 cake">
+          <img src="img/cake.gif" alt="">
+        </div>
+      </div>
+    </div>
+    <img src="img/Balloon-Border.png" width="100%" class="balloon-border">
+  </div>
+
+<br>
+
+  <div style="display: flex;">
+
+  <button onclick="openNewPage()">
+    <p>Click for Next</p>
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+      stroke-width="4">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+    </svg>
+  </button>
+  </div>
+  <script>
+    function openNewPage() {
+      // Replace 'new-page.html' with the actual filename or path of the HTML page you want to open
+      window.location.href = 'page3/index2.html';
+    }
+  </script>
+
+</body>
+<script src="https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js"></script>
+<script src="js/jquery.js"></script>
+<script src="js/typed.min.js"></script>
+<script src="js/script.js"></script>
+
+</html>
